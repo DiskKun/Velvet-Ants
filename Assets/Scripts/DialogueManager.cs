@@ -5,7 +5,9 @@ using TMPro;
 
 public class DialogueManager : MonoBehaviour
 {
+    public GameObject dialogueBox;
     public TextMeshProUGUI dialogueTextBox;
+    public TextMeshProUGUI characterName;
 
     public TextAsset dialogueTSV;
     // Dialogue Format:
@@ -19,9 +21,9 @@ public class DialogueManager : MonoBehaviour
 
     string dialogueString;
     string[] TSVLines;
-    public List<string[]> dialogueTable;
+    List<string[]> dialogueTable;
 
-    public int currentDialogue;
+    int currentDialogue;
 
     // Start is called before the first frame update
     void Start()
@@ -33,38 +35,57 @@ public class DialogueManager : MonoBehaviour
         for (int i = 0; i < TSVLines.Length; i++)
         {
             dialogueTable.Add(TSVLines[i].Split('\t'));
-            //Debug.Log(dialogueTable[i][0]);
-
         }
-
-
-        // TESTING
-
-       
-
+        dialogueBox.SetActive(false);
     }
 
     // Update is called once per frame
     void Update()
     {
-        PrintDialogue(currentDialogue);
+        if (dialogueBox.activeInHierarchy)
+        {
+            PrintDialogue(currentDialogue);
+        }
     }
 
-    public void CommenceDialogue()
+    public void CommenceDialogue(int index)
     {
+        dialogueBox.SetActive(true);
+        currentDialogue = index;
+    }
 
+    public void ContinueDialogue()
+    {
+        if (GetDialogueRow(currentDialogue)[6] == "0")
+        {
+            dialogueBox.SetActive(false);
+        } else
+        {
+            int newID;
+            int.TryParse(GetDialogueRow(currentDialogue)[6], out newID);
+            Debug.Log(newID);
+            currentDialogue = newID;
+        }
     }
 
     public void PrintDialogue(int dialogueID)
     {
+        string[] currDialogueRow = GetDialogueRow(currentDialogue);
+        
+        dialogueTextBox.text = currDialogueRow[5];
+        characterName.text = currDialogueRow[4];
+      
+    }
+
+    string[] GetDialogueRow(int dialogueID)
+    {
         foreach (string[] s in dialogueTable)
         {
-//            Debug.Log(s);
             if (s[2] == dialogueID.ToString())
             {
-                //Debug.Log(s[5].ToString());
-                dialogueTextBox.text = s[5];
+                return(s);
             }
         }
+        return null;
     }
 }

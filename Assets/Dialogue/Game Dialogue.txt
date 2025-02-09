@@ -1,55 +1,55 @@
-Scene Number	Character Number	Dialogue ID	dialogue_type	Character	Content	Go to
-1	1	1	text	character 1	Oh its good you finally arrived detective. The entire palace is in chaos with the news of the Valarian princess' death.	5 6
-1	1	2	text	character 1	WIP 	
-1	1	3	text	character 1	Oh but we were having a banquet to celebrate the annual double eclipse. It was a rare moment of peace between us and Valaria. Shame it was sullied by this tragic death.	4
-1	1	4	text	character 1	But I've talked too much please go on with your duties	0
-1	1	5	option	Detective	tell me about the deceased.	2
-1	1	6	option	Detective	Curians and Valarians under the same roof? It's no wonder someone died. What was the reasoning behind this gathering?	3
-1	3	7	text	character 3	Oh! Um...it's you... Hello Detective	12 13 14
-1	3	8	text	character 3	"Me? I'm merely a server for tonight's feast, I work for the Curian Dynasty"	11
-1	3	9	text	character 3	I swear I know nothing! The Dynasty has kept all waitstaff in the dark about the whole ordeal.	11
-1	3	10	text	character 3	Oh um... I was washing dishes back in the kitchen... yes that's right	11
-1	3	11	text	character 3	I gotta get back to work. Good luck!	0
-1	3	12	option	Detective	Who are you?	8
-1	3	13	option	Detective	What do you know of the murder?	9
-1	3	14	option	Detective	Where were you during the murder?	10
-2	4	15	text	character 4	"Finally! Its good to see you Detective, my name is X the Valarian diplomat stationed here in the Dynasty, and the one who called for your services."	22 24 25 26
-2	4	16	text	character 4	"Don't underestimate the Valarian intelligence network mr Detective. We've heard about your exploits in the surrounding regions. About your ""magical"" deductive abilities, and about your astounding success rate."	23
-2	4	17	text	character 4	"Well of course! Who wouldn't want a detective that has solved every case he has taken, to solve the murder of our Princess."	21
-2	4	18	text	character 4	"I was in the banquet hall, alongside most of the guests. If you are interested in which part of the banquet hall exactly, I was sat in the eastern side where most of the Valarains also sat."	21
-2	4	19	text	character 4	"Not much I'm afraid, it was all quite sudden. All the candles were blown out, and by the time light was restored, the princess's corpse was splayed out in the center of the hall"	21
-2	4	20	text	character 4	"The spellcasters amongst us were quickly held suspect, afterall only magic would be capable of blowing out so many candles at once, and quickly restoring them. They are all being held in the library, and have not been allowed to leave since the incident. And of course the Curians, they have plenty of reason to want one of us dead."	21
-2	4	21	text	character 4	Good luck Detective! You will need it.	0
-2	4	22	option	Detective	How did you find out about me?	16
-2	4	23	option	Detective	And that was enough to hire me for such a high profile case?	17
-2	4	24	option	Detective	Where were you during the murder?	18
-2	4	25	option	Detective	What do you know of the murder?	19
-2	4	26	option	Detective	Are there any suspects?	20
-2	5	27	text	character 5	Detective.	34
-2	5	28	text	character 5	"My name is X, I am the father of the deceased, and current ruler of Valaria"	35 36 
-2	5	29	text	character 5	"In this hall, as was everyone else. Though my daughter had been missing from the hall for some time before the incident."	33
-2	5	30	text	character 5	"I'm King, Detective. I'm surrounded by enemies, as far as I'm concerned everyone present here is a suspect, even my closest aides. Everyone besides you I'd say."	37
-2	5	31	text	character 5	"Advice? Don't rule out anyone. Curians may appear nice and well kept, but they can be as venemous as any viper. Valarians are even worse, if an opportunity for power presents itself, most don't think twice before pouncing. "	38
-2	5	32	text	character 5	"I cannot give you the name of a singular person, as I mentioned before I am surrounded by enemies. But I'd be wary of our diplomat, she has made her career through knowing more than those around her. I'd bet our entire treasury she knows more than she is letting on."	33
-2	5	33	text	character 5	Godspeed Detective.	0
-2	5	34	option	Detective	You are?	28
-2	5	35	option	Detective	Where were you during the murder?	29
-2	5	36	option	Detective	Do you believe there to be any suspects?	30
-2	5	37	option	Detective	"Do you have any advice for this investigation, any immediate leads to follow?"	31
-2	5	38	option	Detective	Any individuals in particular then?	32
-2	6	39	description	character 6	"The individual before you does not notice your approach. While he sits on the floor, his face is hidden by his arms. You can hear a faint sobbing."	47
-2	6	40	text	character 6	"Ahh! Sorry, you startled me... Oh, you must be the detective. My name is X, I am the first prince of the Curian Dynasty."	48
-2	6	41	text	character 6	I guess you could say I feel guilty. I was the last one to see X before she passed. I should be helping but I can't seem to remember I single thing of what took place.	49
-2	6	42	text	character 6	"I speak the truth. I have no recollection of the events of the banquet. I remember waking up that morning, prepping for the event and nothing else, my earliest memory after that is being woken up by a guard who was looking for me, after the murder had already taken place."	50 52
-2	7	43	text	character 6	"X(princess' name)? Yes, we had met a couple of times. She was lovely, never treated me like an enemy even though our nations are at war. We dined, talked and laughed together in many occasions, always treating me like a great friend. Even if I wished we were more... "	51
-2	7	44	text	character 6	"UHH, NOTHING!!"	46
-2	7	45	text	character 6	"Nothing in particular. From the little I remember, all the prepping was going smoothly. I remember talking to my parents, my uncle and X(valarian diplomat). After that it is all a blur. "	46
-2	7	46	text	character 6	Please Detective. Please let me know about whatever you find. The guilt is killing me...	0
-2	7	47	option	Detective	Hey kid you there?	40
-2	7	48	option	Detective	And you are crying because...?	41
-2	7	49	option	Detective	"Oh how convinient, the last one to see the victim, just so happens to have no memories of the night."	42
-2	7	50	option	Detective	"Well then, what was your relationship with the girl, did you know her?"	43
-2	7	51	option	Detective	What did you say?	44
-2	7	52	option	Detective	Is there anything you remember prior to the memory lapse?	45
-2	0	53	evidence answer	character 0	I don't know what that is	
-2	0	54	evidence answer	character 0	"yes, I recognize that"	
+Scene Number	Character Number	Dialogue ID	dialogue_type	Character	Content	Go to 1	Go to 2	Go to 3	Go to 4
+1	1	1	text	character 1	Oh its good you finally arrived detective. The entire palace is in chaos with the news of the Valarian princess' death.	5 6			
+1	1	2	text	character 1	WIP 				
+1	1	3	text	character 1	Oh but we were having a banquet to celebrate the annual double eclipse. It was a rare moment of peace between us and Valaria. Shame it was sullied by this tragic death.	4			
+1	1	4	text	character 1	But I've talked too much please go on with your duties	0			
+1	1	5	option	Detective	tell me about the deceased.*Curians and Valarians under the same roof? It's no wonder someone died. What was the reasoning behind this gathering?	2	3		
+									
+1	3	7	text	character 3	Oh! Um...it's you... Hello Detective	12 13 14			
+1	3	8	text	character 3	"Me? I'm merely a server for tonight's feast, I work for the Curian Dynasty"	11			
+1	3	9	text	character 3	I swear I know nothing! The Dynasty has kept all waitstaff in the dark about the whole ordeal.	11			
+1	3	10	text	character 3	Oh um... I was washing dishes back in the kitchen... yes that's right	11			
+1	3	11	text	character 3	I gotta get back to work. Good luck!	0			
+1	3	12	option	Detective	Who are you?	8			
+1	3	13	option	Detective	What do you know of the murder?	9			
+1	3	14	option	Detective	Where were you during the murder?	10			
+2	4	15	text	character 4	"Finally! Its good to see you Detective, my name is X the Valarian diplomat stationed here in the Dynasty, and the one who called for your services."	22 24 25 26			
+2	4	16	text	character 4	"Don't underestimate the Valarian intelligence network mr Detective. We've heard about your exploits in the surrounding regions. About your ""magical"" deductive abilities, and about your astounding success rate."	23			
+2	4	17	text	character 4	"Well of course! Who wouldn't want a detective that has solved every case he has taken, to solve the murder of our Princess."	21			
+2	4	18	text	character 4	"I was in the banquet hall, alongside most of the guests. If you are interested in which part of the banquet hall exactly, I was sat in the eastern side where most of the Valarains also sat."	21			
+2	4	19	text	character 4	"Not much I'm afraid, it was all quite sudden. All the candles were blown out, and by the time light was restored, the princess's corpse was splayed out in the center of the hall"	21			
+2	4	20	text	character 4	"The spellcasters amongst us were quickly held suspect, afterall only magic would be capable of blowing out so many candles at once, and quickly restoring them. They are all being held in the library, and have not been allowed to leave since the incident. And of course the Curians, they have plenty of reason to want one of us dead."	21			
+2	4	21	text	character 4	Good luck Detective! You will need it.	0			
+2	4	22	option	Detective	How did you find out about me?	16			
+2	4	23	option	Detective	And that was enough to hire me for such a high profile case?	17			
+2	4	24	option	Detective	Where were you during the murder?	18			
+2	4	25	option	Detective	What do you know of the murder?	19			
+2	4	26	option	Detective	Are there any suspects?	20			
+2	5	27	text	character 5	Detective.	34			
+2	5	28	text	character 5	"My name is X, I am the father of the deceased, and current ruler of Valaria"	35 36 			
+2	5	29	text	character 5	"In this hall, as was everyone else. Though my daughter had been missing from the hall for some time before the incident."	33			
+2	5	30	text	character 5	"I'm King, Detective. I'm surrounded by enemies, as far as I'm concerned everyone present here is a suspect, even my closest aides. Everyone besides you I'd say."	37			
+2	5	31	text	character 5	"Advice? Don't rule out anyone. Curians may appear nice and well kept, but they can be as venemous as any viper. Valarians are even worse, if an opportunity for power presents itself, most don't think twice before pouncing. "	38			
+2	5	32	text	character 5	"I cannot give you the name of a singular person, as I mentioned before I am surrounded by enemies. But I'd be wary of our diplomat, she has made her career through knowing more than those around her. I'd bet our entire treasury she knows more than she is letting on."	33			
+2	5	33	text	character 5	Godspeed Detective.	0			
+2	5	34	option	Detective	You are?	28			
+2	5	35	option	Detective	Where were you during the murder?	29			
+2	5	36	option	Detective	Do you believe there to be any suspects?	30			
+2	5	37	option	Detective	"Do you have any advice for this investigation, any immediate leads to follow?"	31			
+2	5	38	option	Detective	Any individuals in particular then?	32			
+2	6	39	description	character 6	"The individual before you does not notice your approach. While he sits on the floor, his face is hidden by his arms. You can hear a faint sobbing."	47			
+2	6	40	text	character 6	"Ahh! Sorry, you startled me... Oh, you must be the detective. My name is X, I am the first prince of the Curian Dynasty."	48			
+2	6	41	text	character 6	I guess you could say I feel guilty. I was the last one to see X before she passed. I should be helping but I can't seem to remember I single thing of what took place.	49			
+2	6	42	text	character 6	"I speak the truth. I have no recollection of the events of the banquet. I remember waking up that morning, prepping for the event and nothing else, my earliest memory after that is being woken up by a guard who was looking for me, after the murder had already taken place."	50 52			
+2	7	43	text	character 6	"X(princess' name)? Yes, we had met a couple of times. She was lovely, never treated me like an enemy even though our nations are at war. We dined, talked and laughed together in many occasions, always treating me like a great friend. Even if I wished we were more... "	51			
+2	7	44	text	character 6	"UHH, NOTHING!!"	46			
+2	7	45	text	character 6	"Nothing in particular. From the little I remember, all the prepping was going smoothly. I remember talking to my parents, my uncle and X(valarian diplomat). After that it is all a blur. "	46			
+2	7	46	text	character 6	Please Detective. Please let me know about whatever you find. The guilt is killing me...	0			
+2	7	47	option	Detective	Hey kid you there?	40			
+2	7	48	option	Detective	And you are crying because...?	41			
+2	7	49	option	Detective	"Oh how convinient, the last one to see the victim, just so happens to have no memories of the night."	42			
+2	7	50	option	Detective	"Well then, what was your relationship with the girl, did you know her?"	43			
+2	7	51	option	Detective	What did you say?	44			
+2	7	52	option	Detective	Is there anything you remember prior to the memory lapse?	45			
+2	0	53	evidence answer	character 0	I don't know what that is				
+2	0	54	evidence answer	character 0	"yes, I recognize that"				
