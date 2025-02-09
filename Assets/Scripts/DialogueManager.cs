@@ -20,8 +20,8 @@ public class DialogueManager : MonoBehaviour
     // Col 6: Go to
 
     string dialogueString;
-    string[] TSVLines;
-    List<string[]> dialogueTable;
+    public string[] TSVLines;
+    public List<string[]> dialogueTable;
 
     int currentDialogue;
 
@@ -56,6 +56,7 @@ public class DialogueManager : MonoBehaviour
 
     public void ContinueDialogue()
     {
+        Debug.Log(GetDialogueRow(currentDialogue)[6]);
         if (GetDialogueRow(currentDialogue)[6] == "0")
         {
             dialogueBox.SetActive(false);
