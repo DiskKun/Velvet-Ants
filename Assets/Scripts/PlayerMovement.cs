@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
@@ -11,7 +12,7 @@ public class PlayerMovement : MonoBehaviour
     public float speed = 3;
 
     public GameObject dialoguePrompt;
-    bool inDialogue = false;
+    bool canMove = true;
 
     void Start()
     {
@@ -21,9 +22,7 @@ public class PlayerMovement : MonoBehaviour
     }
 
     private void FixedUpdate()
-    {
-        if (inDialogue) return; //do not move player if in dialogue
-        
+    {        
         movement = destination - (Vector2)transform.position; //gets the vector from the current position to the destination clicked by mouse
 
         if (movement.magnitude < 0.1) //if within range of the destination, stop moving
@@ -33,9 +32,14 @@ public class PlayerMovement : MonoBehaviour
         playerRB.velocity = movement.normalized * speed; //set player's velocity to the movement vector
     }
 
+    public void ToggleMovement()
+    {
+        canMove = !canMove;
+    }
+
     void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonUp(0) && canMove)
         {
             destination = new Vector2(Camera.main.ScreenToWorldPoint(Input.mousePosition).x, 0); //sets the player's destination to whereever mouse clicks
         }
@@ -62,6 +66,13 @@ public class PlayerMovement : MonoBehaviour
             //show dialogue prompt
             dialoguePrompt.SetActive(true);
 
+        }
+    }
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.tag == "NPC")
+        {
+            dialoguePrompt.SetActive(false);
         }
     }
 }

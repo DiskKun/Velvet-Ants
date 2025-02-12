@@ -6,6 +6,9 @@ using UnityEngine.UI;
 
 public class DialogueManager : MonoBehaviour
 {
+    public GameObject player;
+    PlayerMovement playerMovement;
+
     public GameObject dialogueBox;
     public TextMeshProUGUI dialogueTextBox;
     public TextMeshProUGUI characterName;
@@ -46,6 +49,8 @@ public class DialogueManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        playerMovement = player.GetComponent<PlayerMovement>();
+
         option1Button = option1.GetComponent<Button>();
         option2Button = option2.GetComponent<Button>();
         option3Button = option3.GetComponent<Button>();
@@ -75,6 +80,7 @@ public class DialogueManager : MonoBehaviour
         {
             optionBox.SetActive(false);
             dialogueBox.SetActive(false);
+            
         }
     }
 
@@ -90,6 +96,7 @@ public class DialogueManager : MonoBehaviour
         if (GetDialogueRow(currentDialogue)[gotoRow] == "0")
         {
             currentDialogue = 0;
+            playerMovement.ToggleMovement();
         } else
         {
             int newID;
