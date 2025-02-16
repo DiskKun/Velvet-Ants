@@ -32,9 +32,9 @@ public class PlayerMovement : MonoBehaviour
         playerRB.velocity = movement.normalized * speed; //set player's velocity to the movement vector
     }
 
-    public void ToggleMovement()
+    public void AllowMovement(bool t)
     {
-        canMove = !canMove;
+        canMove = t;
     }
 
     void Update()
