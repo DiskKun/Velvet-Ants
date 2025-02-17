@@ -16,20 +16,9 @@ public class DialogueManager : MonoBehaviour
     public TextAsset dialogueTSV;
 
     public GameObject optionBox;
-    public GameObject option1;
-    public GameObject option2;
-    public GameObject option3;
-    public GameObject option4;
-    public TextMeshProUGUI option1Text;
-    public TextMeshProUGUI option2Text;
-    public TextMeshProUGUI option3Text;
-    public TextMeshProUGUI option4Text;
-
-    Button option1Button;
-    Button option2Button;
-    Button option3Button;
-    Button option4Button;
-
+    List<GameObject> optionBoxes = new List<GameObject>();
+    public List<Button> optionButtons = new List<Button>();
+    List<TextMeshProUGUI> optionTexts = new List<TextMeshProUGUI>();
 
 
     // Dialogue Format:
@@ -39,7 +28,7 @@ public class DialogueManager : MonoBehaviour
     // Col 3: Dialogue type
     // Col 4: Character
     // Col 5: Content
-    // Col 6: Go to
+    // Col 6-9: Go to
 
     string dialogueString;
     public string[] TSVLines;
@@ -51,10 +40,18 @@ public class DialogueManager : MonoBehaviour
     void Start()
     {
 
-        option1Button = option1.GetComponent<Button>();
-        option2Button = option2.GetComponent<Button>();
-        option3Button = option3.GetComponent<Button>();
-        option4Button = option4.GetComponent<Button>();
+        foreach (Transform child in optionBox.transform.GetChild(0))
+        {
+            optionBoxes.Add(child.gameObject);
+        }
+        foreach (GameObject oBox in optionBoxes)
+        {
+            optionButtons.Add(oBox.GetComponent<Button>());
+            optionTexts.Add(oBox.transform.GetChild(0).GetComponent<TextMeshProUGUI>());
+        }
+
+
+        
 
 
 
@@ -72,84 +69,66 @@ public class DialogueManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (currentDialogue != 0)
-        {
-            PrintDialogue(currentDialogue);
-        }
+
     }
 
     public void CommenceDialogue(int index)
     {
         //dialogueBox.SetActive(true);
         currentDialogue = index;
+        PrintDialogue(currentDialogue);
     }
 
     public void ContinueDialogue(int gotoRow)
     {
-        //Debug.Log(GetDialogueRow(currentDialogue)[gotoRow]);
-        if (GetDialogueRow(currentDialogue)[gotoRow] == "0")
-        {
-            currentDialogue = 0;
-            inputManager.ChangeGameMode("move");
-        } else
-        {
-            int newID;
-            int.TryParse(GetDialogueRow(currentDialogue)[gotoRow], out newID);
-            //Debug.Log(newID);
-            currentDialogue = newID;
-        }
+
+        //if (currentDialogue == 0) { return; }
+
+
+        Debug.Log(gotoRow);
+        int newID;
+        int.TryParse(GetDialogueRow(currentDialogue)[gotoRow], out newID);
+        currentDialogue = newID;
+        PrintDialogue(currentDialogue);
+        
     }
 
     public void PrintDialogue(int dialogueID)
     {
+
+        if (currentDialogue == 0) { inputManager.ChangeGameMode("move");return; }
+
+
+
         string[] currDialogueRow = GetDialogueRow(currentDialogue);
+
+        
 
         if (currDialogueRow[3] == "option")
         {
             optionBox.SetActive(true);
             dialogueBox.SetActive(false);
             string[] options = currDialogueRow[5].Split("*");
-            option1Text.text = "";
-            option2Text.text = "";
-            option3Text.text = "";
-            option4Text.text = "";
-            option1Button.onClick.RemoveAllListeners();
-            option2Button.onClick.RemoveAllListeners();
-            option3Button.onClick.RemoveAllListeners();
-            option4Button.onClick.RemoveAllListeners();
-
-            if (options.Length == 1)
+            foreach (TextMeshProUGUI t in optionTexts)
             {
-                option1Text.text = options[0];
-                option1Button.onClick.AddListener(delegate { ContinueDialogue(6); });
+                t.text = "";
             }
-            else if (options.Length == 2)
+            foreach (Button b in optionButtons)
             {
-                option1Text.text = options[0];
-                option2Text.text = options[1];
-                option1Button.onClick.AddListener(delegate { ContinueDialogue(6); });
-                option2Button.onClick.AddListener(delegate { ContinueDialogue(7); });
-            } else if (options.Length == 3)
-            {
-                option1Text.text = options[0];
-                option2Text.text = options[1];
-                option3Text.text = options[2];
-                option1Button.onClick.AddListener(delegate { ContinueDialogue(6); });
-                option2Button.onClick.AddListener(delegate { ContinueDialogue(7); });
-                option3Button.onClick.AddListener(delegate { ContinueDialogue(8); });
-            } else if (options.Length == 4)
-            {
-                option1Text.text = options[0];
-                option2Text.text = options[1];
-                option3Text.text = options[2];
-                option4Text.text = options[3];
-                option1Button.onClick.AddListener(delegate { ContinueDialogue(6); });
-                option2Button.onClick.AddListener(delegate { ContinueDialogue(7); });
-                option3Button.onClick.AddListener(delegate { ContinueDialogue(8); });
-                option4Button.onClick.AddListener(delegate { ContinueDialogue(9); });
-
+                b.onClick.RemoveAllListeners();
             }
 
+            optionTexts[0].text = options[0];
+            optionButtons[0].onClick.AddListener(delegate { ContinueDialogue(6); });
+            if (options.Length == 1) { return; }
+            optionTexts[1].text = options[1];
+            optionButtons[1].onClick.AddListener(delegate { ContinueDialogue(7); });
+            if (options.Length == 2) { return; }
+            optionTexts[2].text = options[2];
+            optionButtons[2].onClick.AddListener(delegate { ContinueDialogue(8); });
+            if (options.Length == 3) { return; }
+            optionTexts[3].text = options[3];
+            optionButtons[3].onClick.AddListener(delegate { ContinueDialogue(9); });
 
         }
         else if (currDialogueRow[3] == "text")
