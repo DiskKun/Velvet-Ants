@@ -11,25 +11,23 @@ public class PlayerMovement : MonoBehaviour
     private Vector2 movement;
     public float speed = 3;
 
+    private SpriteRenderer sprite;
+
     public GameObject dialoguePrompt;
     bool canMove = true;
 
     void Start()
     {
         playerRB = GetComponent<Rigidbody2D>();
+        sprite = GetComponentInChildren<SpriteRenderer>();
 
         dialoguePrompt.SetActive(false); //don't show dialogue prompt
     }
 
     private void FixedUpdate()
     {
-        if (transform.position.x > -54 && transform.position.x < 54)
-        {
-            movement = destination - (Vector2)transform.position; //gets the vector from the current position to the destination clicked by mouse
-        } else
-        {
-            movement = Vector2.zero;
-        }
+        movement = destination - (Vector2)transform.position; //gets the vector from the current position to the destination clicked by mouse
+
 
         if (movement.magnitude < 0.1) //if within range of the destination, stop moving
         {
@@ -45,23 +43,19 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
-
+        ////old way
         if (Input.GetMouseButtonUp(0) && canMove)
         {
             destination = new Vector2(Camera.main.ScreenToWorldPoint(Input.mousePosition).x, 0); //sets the player's destination to whereever mouse clicks
         }
 
-        //makes player face the direction they are moving
-        Vector3 scale = transform.localScale;
         if (movement.x > 0)
         {
-            scale.x = 1;
-            transform.localScale = scale;
+            sprite.flipX = false;
         }
         else if (movement.x < 0)
         {
-            scale.x = -1;
-            transform.localScale = scale;
+            sprite.flipX = true;
         }
 
     }
