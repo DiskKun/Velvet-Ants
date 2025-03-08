@@ -7,19 +7,18 @@ public class PlayerMovement : MonoBehaviour
 {
     //variables for player movement
     Rigidbody2D playerRB;
-    private Vector2 destination;
+    public Vector2 destination;
     private Vector2 movement;
     public float speed = 3;
 
-    private SpriteRenderer sprite;
-
+    //variables for dialogue prompt
     public GameObject dialoguePrompt;
     bool canMove = true;
+    public InputManager inputManager;
 
     void Start()
     {
         playerRB = GetComponent<Rigidbody2D>();
-        sprite = GetComponentInChildren<SpriteRenderer>();
 
         dialoguePrompt.SetActive(false); //don't show dialogue prompt
     }
@@ -51,11 +50,11 @@ public class PlayerMovement : MonoBehaviour
 
         if (movement.x > 0)
         {
-            sprite.flipX = false;
+            gameObject.transform.localScale = new Vector3 (-1, 1, 1); //character faces left
         }
         else if (movement.x < 0)
         {
-            sprite.flipX = true;
+            gameObject.transform.localScale = new Vector3(1, 1, 1); //character faces right
         }
 
     }
@@ -73,7 +72,11 @@ public class PlayerMovement : MonoBehaviour
     {
         if (collision.tag == "NPC")
         {
-            dialoguePrompt.SetActive(false);
+            if (dialoguePrompt != null)
+            {
+                dialoguePrompt.SetActive(false);
+
+            }
         }
     }
 }
