@@ -20,6 +20,7 @@ public class PlayerMovement : MonoBehaviour
     {
         playerRB = GetComponent<Rigidbody2D>();
 
+        destination = transform.position;
         dialoguePrompt.SetActive(false); //don't show dialogue prompt
     }
 
@@ -45,7 +46,7 @@ public class PlayerMovement : MonoBehaviour
         ////old way
         if (Input.GetMouseButtonUp(0) && canMove)
         {
-            destination = new Vector2(Camera.main.ScreenToWorldPoint(Input.mousePosition).x, 0); //sets the player's destination to whereever mouse clicks
+            destination = new Vector2(Camera.main.ScreenToWorldPoint(Input.mousePosition).x, transform.position.y); //sets the player's destination to whereever mouse clicks
         }
 
         if (movement.x > 0)

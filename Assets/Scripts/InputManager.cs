@@ -6,8 +6,9 @@ public class InputManager : MonoBehaviour
 {
     public PlayerMovement playerMovement;
     public GameObject dialogue;
+    //public GameObject dialoguePrompt;
     public GameObject clues;
-    public CameraZoom cameraZoomScript;
+    //public CameraZoom cameraZoomScript;
     // Start is called before the first frame update
     void Start()
     {
@@ -30,14 +31,12 @@ public class InputManager : MonoBehaviour
             playerMovement.AllowMovement(true);
             dialogue.SetActive(false);
             clues.SetActive(false);
-            cameraZoomScript.ZoomOut();
 
         } else if (mode == "dialogue")
         {
             playerMovement.AllowMovement(false);
             dialogue.SetActive(true);
             clues.SetActive(false);
-            cameraZoomScript.ZoomIn();
         } else if (mode == "clues")
         {
             playerMovement.AllowMovement(false);

@@ -20,7 +20,6 @@ public class DialogueManager : MonoBehaviour
     public List<Button> optionButtons = new List<Button>();
     List<TextMeshProUGUI> optionTexts = new List<TextMeshProUGUI>();
 
-
     // Dialogue Format:
     // Col 0: Scene number
     // Col 1: Character number
@@ -35,6 +34,8 @@ public class DialogueManager : MonoBehaviour
     public List<string[]> dialogueTable;
 
     int currentDialogue;
+
+    public CameraZoom cameraZoomScript;
 
     // Start is called before the first frame update
     void Start()
@@ -52,8 +53,6 @@ public class DialogueManager : MonoBehaviour
 
 
         
-
-
 
         dialogueString = dialogueTSV.text;
         TSVLines = dialogueString.Split("\n");
@@ -77,6 +76,8 @@ public class DialogueManager : MonoBehaviour
         //dialogueBox.SetActive(true);
         currentDialogue = index;
         PrintDialogue(currentDialogue);
+        
+        cameraZoomScript.ZoomIn();
     }
 
     public void ContinueDialogue(int gotoRow)
@@ -96,7 +97,7 @@ public class DialogueManager : MonoBehaviour
     public void PrintDialogue(int dialogueID)
     {
 
-        if (currentDialogue == 0) { inputManager.ChangeGameMode("move");return; }
+        if (currentDialogue == 0) { inputManager.ChangeGameMode("move"); cameraZoomScript.ZoomOut(); return; }
 
 
 

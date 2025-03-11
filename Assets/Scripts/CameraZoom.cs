@@ -7,12 +7,12 @@ using UnityEngine;
 public class CameraZoom : MonoBehaviour
 {
     public CinemachineVirtualCamera VirtualCamera;
-    public Transform defaultTarget;
+    public Transform player;
     public Transform zoomTarget;
 
     private bool zoomedIn;
 
-    private bool lerp;
+    private bool lerp = false;
     public float lerpTime;
     public AnimationCurve curve;
     private float timer = 0;
@@ -51,6 +51,7 @@ public class CameraZoom : MonoBehaviour
                 timer = 0;
                 lerp = false;
             }
+            
         }
 
     }
@@ -60,11 +61,12 @@ public class CameraZoom : MonoBehaviour
         VirtualCamera.Follow = zoomTarget;
         lerp = true;
         zoomedIn = true;
+        
     }
 
     public void ZoomOut()
     {
-        VirtualCamera.Follow = defaultTarget;
+        VirtualCamera.Follow = player;
         lerp = true;
         zoomedIn = false;
     }
