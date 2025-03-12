@@ -73,26 +73,45 @@ public class DialogueManager : MonoBehaviour
 
     public void CommenceDialogue(int index)
     {
+        
         //dialogueBox.SetActive(true);
         currentDialogue = index;
         PrintDialogue(currentDialogue);
         
         cameraZoomScript.ZoomIn();
+
+        var data = new ConversationData()
+        {
+            dilaogueID = index,
+            target = GetDialogueRow(currentDialogue)[4]
+
+        };
+        TelemetryLogger.Log(this,"Commenced dialogue",data);
     }
 
     public void ContinueDialogue(int gotoRow)
     {
 
         //if (currentDialogue == 0) { return; }
-
+        
 
         Debug.Log(gotoRow);
         int newID;
         int.TryParse(GetDialogueRow(currentDialogue)[gotoRow], out newID);
         currentDialogue = newID;
         PrintDialogue(currentDialogue);
-        
+
+        TelemetryLogger.Log(this, "progressed Dialogue");
     }
+
+    [System.Serializable]
+    public struct ConversationData
+    {
+        public int dilaogueID;
+        public string target;
+        //public int optionsUsed;
+    }
+
 
     public void PrintDialogue(int dialogueID)
     {
