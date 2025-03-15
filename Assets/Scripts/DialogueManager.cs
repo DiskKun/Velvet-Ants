@@ -37,6 +37,13 @@ public class DialogueManager : MonoBehaviour
 
     public CameraZoom cameraZoomScript;
 
+    [System.Serializable]
+    public struct DialogueData
+    {
+        public int dialogueID;
+        public string characterName;
+    }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -78,6 +85,15 @@ public class DialogueManager : MonoBehaviour
         PrintDialogue(currentDialogue);
         
         cameraZoomScript.ZoomIn();
+
+
+        var data = new DialogueData()
+        {
+            dialogueID = index,
+            characterName = GetDialogueRow(currentDialogue)[4]
+        };
+        TelemetryLogger.Log(this, "Dialogue Commenced", data);
+
     }
 
     public void ContinueDialogue(int gotoRow)
