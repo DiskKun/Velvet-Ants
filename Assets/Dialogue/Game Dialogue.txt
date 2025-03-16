@@ -1,7 +1,7 @@
 Scene Number	Character Number	Dialogue ID	dialogue_type	Character	Content	Go to 1	Go to 2	Go to 3	Go to 4
 1	1	1	text	character 1	Oh its good you finally arrived detective. The entire palace is in chaos with the news of the Valarian princess' death.	5			
 1	1	2	text	character 1	WIP 				
-1	1	3	text	character 1	Oh but we were having a %banquet to celebrate the annual double eclipse. It was a rare moment of peace between us and Valaria.% Shame it was sullied by this tragic death.	4			
+1	1	3	text	character 1	Oh but we were having a banquet to celebrate the annual double eclipse. It was a rare moment of peace between us and Valaria. Shame it was sullied by this tragic death.	4			
 1	1	4	text	character 1	But I've talked too much please go on with your duties	0			
 1	1	5	option	Detective	tell me about the deceased.*Curians and Valarians under the same roof? It's no wonder someone died. What was the reasoning behind this gathering?	2	3		
 									
@@ -46,3 +46,12 @@ Scene Number	Character Number	Dialogue ID	dialogue_type	Character	Content	Go to 
 2	7	51	option	Detective	What did you say?	44			
 2	0	53	evidence answer	character 0	I don't know what that is				
 2	0	54	evidence answer	character 0	"yes, I recognize that"				
+2	0	101	evidence description	 Curian Dagger	A bloody ornate dagger crafted following curian design patterns. It’s design seems too beautiful and delicate to be carried by a common thug.				
+2	0	102	evidence description	Torn Fabric	"A torn piece of red fabric, looks like it belonged to a piece of clothing"				
+2	0	103	evidence description	Mostly Empty Flask	A mostly empty flask that contains the last drops of an unknown blue liquid.				
+2	0	104	evidence description	Comb	A beautifully crafted Ivory comb adorned with jewels. Looks like it is worth a fortune. 				
+2	0	201	evidence answer	character 6	"Oh yes, I know what that is. That is my dagger, I carry it with me at all times. I was quite startled since when I woke up I no longer had it on my person. You said it was bloody? Well i can assure you I have no recollection of using it on anyone!"				
+2	0	202	evidence answer	character 4	"Hmm, it seems to be a piece of Valarian fabric. Based on the familiar patterns I would say that it comes from a dress, it is certainly similar to my own."				
+2	0	203	evidence answer	character 5	"Although I’m not familiar with the flask or the liquid within it, I would guess it is a potion. I have seen concoctions of a similar color before. "				
+2	0	204	evidence answer	character 4	"Yes, I know what that is, that is the Princess’ comb, it was a gift from her mother that she received on her 16th birthday."				
+2	0	205	evidence answer	character 5	"Yes, I know what that is, its my daughters comb, it was a gift from her mother that she received on her 16th birthday."				
