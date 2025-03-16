@@ -86,7 +86,7 @@ public class DialogueManager : MonoBehaviour
         //if (currentDialogue == 0) { return; }
 
 
-        Debug.Log(gotoRow);
+        //Debug.Log(gotoRow);
         int newID;
         int.TryParse(GetDialogueRow(currentDialogue)[gotoRow], out newID);
         currentDialogue = newID;

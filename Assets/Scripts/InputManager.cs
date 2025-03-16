@@ -8,6 +8,7 @@ public class InputManager : MonoBehaviour
     public GameObject dialogue;
     //public GameObject dialoguePrompt;
     public GameObject clues;
+    public GameObject evidenceButton;
     //public CameraZoom cameraZoomScript;
     // Start is called before the first frame update
     void Start()
@@ -31,17 +32,22 @@ public class InputManager : MonoBehaviour
             playerMovement.AllowMovement(true);
             dialogue.SetActive(false);
             clues.SetActive(false);
+            evidenceButton.SetActive(true);
 
         } else if (mode == "dialogue")
         {
             playerMovement.AllowMovement(false);
             dialogue.SetActive(true);
             clues.SetActive(false);
-        } else if (mode == "clues")
+            evidenceButton.SetActive(false);
+        }
+        else if (mode == "clues")
         {
             playerMovement.AllowMovement(false);
             dialogue.SetActive(false);
             clues.SetActive(true);
+            evidenceButton.SetActive(false);
+
         }
     }
 }
