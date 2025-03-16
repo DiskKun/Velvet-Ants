@@ -23,6 +23,8 @@ public class ClueManager : MonoBehaviour
             clueGameObjects.Add(t.gameObject);
         }
 
+
+        // TEMPORARY
         ClueActive("Clue 1", true);
     }
 
