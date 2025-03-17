@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -13,15 +14,17 @@ public class PlayerMovement : MonoBehaviour
 
     //variables for dialogue prompt
     public GameObject dialoguePrompt;
+    Button dialoguePromptButton;
     bool canMove = true;
     public InputManager inputManager;
 
     void Start()
     {
         playerRB = GetComponent<Rigidbody2D>();
+        dialoguePromptButton = dialoguePrompt.GetComponent<Button>();
 
         destination = transform.position;
-        dialoguePrompt.SetActive(false); //don't show dialogue prompt
+        dialoguePrompt.gameObject.SetActive(false); //don't show dialogue prompt
     }
 
     private void FixedUpdate()
@@ -65,7 +68,7 @@ public class PlayerMovement : MonoBehaviour
         if (collision.tag == "NPC") //if enter NPC trigger zone
         {
             //show dialogue prompt
-            dialoguePrompt.SetActive(true);
+            dialoguePrompt.gameObject.SetActive(true);
 
         }
     }
@@ -75,7 +78,7 @@ public class PlayerMovement : MonoBehaviour
         {
             if (dialoguePrompt != null)
             {
-                dialoguePrompt.SetActive(false);
+                dialoguePrompt.gameObject.SetActive(false);
 
             }
         }

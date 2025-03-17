@@ -23,6 +23,9 @@ public class Clue : MonoBehaviour, IPointerMoveHandler, IPointerClickHandler, IP
     Vector3 clickScale;
     Vector3 moveScale;
 
+    Vector3 movePoint;
+    Vector3 mouseMovePoint;
+
     string mode = "normal";
     
     
@@ -81,8 +84,7 @@ public class Clue : MonoBehaviour, IPointerMoveHandler, IPointerClickHandler, IP
         if (mouseDown)
         {
             mode = "move";
-            rt.position = Input.mousePosition;
-            rt.position = new Vector3(rt.position.x, rt.position.y, 1);
+            rt.position = movePoint + (Input.mousePosition - mouseMovePoint);
             mouseMove = true;
         }
     }
@@ -98,10 +100,11 @@ public class Clue : MonoBehaviour, IPointerMoveHandler, IPointerClickHandler, IP
 
     public void OnPointerDown(PointerEventData pointerEventData)
     {
-        Debug.Log("Down!");
         timeAlongCurve = 0;
         mouseDown = true;
         mouseMove = false;
+        movePoint = rt.position;
+        mouseMovePoint = Input.mousePosition;
         mode = "down";
     }
 
