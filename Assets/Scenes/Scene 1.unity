@@ -140,7 +140,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &15686221
 RectTransform:
   m_ObjectHideFlags: 0
@@ -210,13 +210,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a49501fd984894ab5bf226ca5274a820, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hoverSize: 0
-  clickSize: 0
-  moveSize: 0
-  animationSpeed: 0
   animationCurve:
     serializedVersion: 2
-    m_Curve: []
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 2
+      outSlope: 2
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
@@ -2703,7 +2717,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1146442565
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2773,13 +2787,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a49501fd984894ab5bf226ca5274a820, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hoverSize: 0
-  clickSize: 0
-  moveSize: 0
-  animationSpeed: 0
   animationCurve:
     serializedVersion: 2
-    m_Curve: []
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 2
+      outSlope: 2
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
@@ -4488,10 +4516,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a49501fd984894ab5bf226ca5274a820, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hoverSize: 1.25
-  clickSize: 1.125
-  moveSize: 1.5
-  animationSpeed: 5
   animationCurve:
     serializedVersion: 2
     m_Curve:

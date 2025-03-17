@@ -10,10 +10,10 @@ public class Clue : MonoBehaviour, IPointerMoveHandler, IPointerClickHandler, IP
 
     RectTransform rt;
 
-    public float hoverSize;
-    public float clickSize;
-    public float moveSize;
-    public float animationSpeed = 1;
+    float hoverSize = 1.25f;
+    float clickSize = 1.125f;
+    float moveSize = 1.5f;
+    float animationSpeed = 5;
     public AnimationCurve animationCurve;
     
     float timeAlongCurve;
@@ -82,6 +82,7 @@ public class Clue : MonoBehaviour, IPointerMoveHandler, IPointerClickHandler, IP
         {
             mode = "move";
             rt.position = Input.mousePosition;
+            rt.position = new Vector3(rt.position.x, rt.position.y, 1);
             mouseMove = true;
         }
     }
@@ -97,7 +98,7 @@ public class Clue : MonoBehaviour, IPointerMoveHandler, IPointerClickHandler, IP
 
     public void OnPointerDown(PointerEventData pointerEventData)
     {
-        //Debug.Log("Down!");
+        Debug.Log("Down!");
         timeAlongCurve = 0;
         mouseDown = true;
         mouseMove = false;
