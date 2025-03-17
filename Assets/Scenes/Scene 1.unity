@@ -210,6 +210,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a49501fd984894ab5bf226ca5274a820, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hoverSize: 0
+  clickSize: 0
+  moveSize: 0
+  animationSpeed: 0
+  animationCurve:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &16097034
 GameObject:
   m_ObjectHideFlags: 0
@@ -1199,7 +1209,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &407206493
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2763,6 +2773,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a49501fd984894ab5bf226ca5274a820, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hoverSize: 0
+  clickSize: 0
+  moveSize: 0
+  animationSpeed: 0
+  animationCurve:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1001 &1184224503
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4398,7 +4418,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1799656967
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4415,7 +4435,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -239, y: 106}
+  m_AnchoredPosition: {x: -205, y: 113}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1799656968
@@ -4468,6 +4488,34 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a49501fd984894ab5bf226ca5274a820, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hoverSize: 1.25
+  clickSize: 1.125
+  moveSize: 1.5
+  animationSpeed: 5
+  animationCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 2
+      outSlope: 2
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &1945596248
 GameObject:
   m_ObjectHideFlags: 0
