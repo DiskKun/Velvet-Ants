@@ -50,12 +50,13 @@ public class PlayerMovement : MonoBehaviour
         {
             foreach (Collider2D collider in specialMovementColliders)
             {
-                Collider2D hitCollider = Physics2D.OverlapPoint(transform.position);
+                Collider2D hitCollider = Physics2D.OverlapPoint(Camera.main.ScreenToWorldPoint(Input.mousePosition));
                 if (collider  == hitCollider)
                 {
                     foundCollider = collider.gameObject;
                     Debug.Log("found collider: " + foundCollider);
                 }
+                //Debug.Log(collider);
             }
             if (foundCollider != null)
             {

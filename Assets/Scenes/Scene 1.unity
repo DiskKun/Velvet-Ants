@@ -3848,7 +3848,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   destination: {x: 0, y: 0}
   speed: 8
-  specialMovementColliders: []
+  specialMovementColliders:
+  - {fileID: 1758119734}
+  - {fileID: 6093926342440885018}
+  playerPositionOffset: 0.6
 --- !u!4 &1407362916
 Transform:
   m_ObjectHideFlags: 0
