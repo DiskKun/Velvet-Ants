@@ -95,7 +95,7 @@ public class DialogueManager : MonoBehaviour
 
     public void PrintDialogue(int dialogueID)
     {
-
+        inputManager.ChangeGameMode("dialogue");
         if (currentDialogue == 0) { inputManager.ChangeGameMode("move"); cameraZoomScript.ZoomOut(); return; }
 
 
@@ -131,7 +131,7 @@ public class DialogueManager : MonoBehaviour
             optionButtons[3].onClick.AddListener(delegate { ContinueDialogue(9); });
 
         }
-        else if (currDialogueRow[3] == "text")
+        else if (currDialogueRow[3] == "text" || currDialogueRow[3] == "description")
         {
             optionBox.SetActive(false);
             dialogueBox.SetActive(true);
