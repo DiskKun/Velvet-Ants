@@ -7,7 +7,7 @@ using UnityEngine;
 public class CameraZoom : MonoBehaviour
 {
     public CinemachineVirtualCamera VirtualCamera;
-    public Transform player;
+    public GameObject player;
 
     private bool zoomedIn;
 
@@ -50,14 +50,21 @@ public class CameraZoom : MonoBehaviour
         VirtualCamera.Follow = target;
         lerp = true;
         zoomedIn = true;
-        
+
+        //make player destination a little to the (right/left) of zoom target
+        player.GetComponent<PlayerMovement>().DialoguePositioning(target);
+
     }
 
     public void ZoomOut()
     {
-        VirtualCamera.Follow = player;
-        lerp = true;
-        zoomedIn = false;
+        if (VirtualCamera.Follow != player.transform)
+        {
+            VirtualCamera.Follow = player.transform;
+            lerp = true;
+            zoomedIn = false;
+        }
+
     }
     
 }

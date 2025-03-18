@@ -32,7 +32,6 @@ public class InputManager : MonoBehaviour
             dialogue.SetActive(false);
             clues.SetActive(false);
             evidenceButton.SetActive(true);
-
         }
         else if (mode == "dialogue")
         {

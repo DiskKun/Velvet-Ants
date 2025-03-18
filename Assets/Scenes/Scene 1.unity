@@ -1601,7 +1601,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   VirtualCamera: {fileID: 592521946}
-  player: {fileID: 1407362916}
+  player: {fileID: 1407362912}
   lerpTime: 1
   curve:
     serializedVersion: 2
@@ -3852,10 +3852,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   destination: {x: 0, y: 0}
   speed: 8
-  specialMovementColliders:
-  - {fileID: 1758119734}
-  - {fileID: 6093926342440885018}
-  playerPositionOffset: 0.6
+  playerPositionOffset: 3
 --- !u!4 &1407362916
 Transform:
   m_ObjectHideFlags: 0
@@ -6168,7 +6165,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2889551549529723405}
   m_Layer: 7
-  m_Name: Zoom Target (Temp)
+  m_Name: Zoom Target (King)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6201,7 +6198,7 @@ GameObject:
   - component: {fileID: 3529034949115060266}
   - component: {fileID: 7037685442828477844}
   m_Layer: 7
-  m_Name: Temp NPC
+  m_Name: King NPC
   m_TagString: NPC
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
