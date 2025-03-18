@@ -8,7 +8,6 @@ public class CameraZoom : MonoBehaviour
 {
     public CinemachineVirtualCamera VirtualCamera;
     public Transform player;
-    public Transform zoomTarget;
 
     private bool zoomedIn;
 
@@ -19,16 +18,6 @@ public class CameraZoom : MonoBehaviour
 
     private void Update()
     {
-        //if (Input.GetKeyDown("space"))
-        //{
-        //    if (!zoomedIn)
-        //    {
-        //        ZoomIn();    
-        //    } else
-        //    {
-        //        ZoomOut();
-        //    }
-        //}
 
         if (lerp)
         {
@@ -56,9 +45,9 @@ public class CameraZoom : MonoBehaviour
 
     }
 
-    public void ZoomIn()
+    public void ZoomIn(Transform target)
     {
-        VirtualCamera.Follow = zoomTarget;
+        VirtualCamera.Follow = target;
         lerp = true;
         zoomedIn = true;
         

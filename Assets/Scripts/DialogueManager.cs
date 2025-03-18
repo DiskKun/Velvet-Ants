@@ -77,7 +77,6 @@ public class DialogueManager : MonoBehaviour
         currentDialogue = index;
         PrintDialogue(currentDialogue);
         
-        cameraZoomScript.ZoomIn();
     }
 
     public void ContinueDialogue(int gotoRow)

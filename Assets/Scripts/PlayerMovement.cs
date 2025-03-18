@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -12,19 +13,16 @@ public class PlayerMovement : MonoBehaviour
     private Vector2 movement;
     public float speed = 3;
 
-    //variables for dialogue prompt
-    public GameObject dialoguePrompt;
-    Button dialoguePromptButton;
-    bool canMove = true;
-    public InputManager inputManager;
+    static bool canMove = true;
+
+    public List<Collider2D> specialMovementColliders;
+    GameObject foundCollider;
+    public float playerPositionOffset;
 
     void Start()
     {
         playerRB = GetComponent<Rigidbody2D>();
-        dialoguePromptButton = dialoguePrompt.GetComponent<Button>();
-
         destination = transform.position;
-        dialoguePrompt.gameObject.SetActive(false); //don't show dialogue prompt
     }
 
     private void FixedUpdate()
@@ -39,17 +37,44 @@ public class PlayerMovement : MonoBehaviour
         playerRB.velocity = movement.normalized * speed; //set player's velocity to the movement vector
     }
 
-    public void AllowMovement(bool t)
+    static public void AllowMovement(bool t)
     {
         canMove = t;
     }
 
     void Update()
     {
-        ////old way
+
+        //GIL's WIP
         if (Input.GetMouseButtonUp(0) && canMove)
         {
+            foreach (Collider2D collider in specialMovementColliders)
+            {
+                Collider2D hitCollider = Physics2D.OverlapPoint(transform.position);
+                if (collider  == hitCollider)
+                {
+                    foundCollider = collider.gameObject;
+                    Debug.Log("found collider: " + foundCollider);
+                }
+            }
+            if (foundCollider != null)
+            {
+                //move to the designated position near the collider
+                Vector2 playerToCollider = transform.position - foundCollider.transform.position;
+                if (playerToCollider.normalized.x > 0) //facing right
+                {
+                    destination = transform.position + new Vector3(playerPositionOffset, 0, 0);
+                }
+                else if (playerToCollider.normalized.x < 0) //facing left
+                {
+                    destination = transform.position - new Vector3(playerPositionOffset, 0, 0);
+                }
+            }
+            else
+            {
             destination = new Vector2(Camera.main.ScreenToWorldPoint(Input.mousePosition).x, transform.position.y); //sets the player's destination to whereever mouse clicks
+            }
+
         }
 
         if (movement.x > 0)
@@ -63,24 +88,4 @@ public class PlayerMovement : MonoBehaviour
 
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.tag == "NPC") //if enter NPC trigger zone
-        {
-            //show dialogue prompt
-            dialoguePrompt.gameObject.SetActive(true);
-
-        }
-    }
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-        if (collision.tag == "NPC")
-        {
-            if (dialoguePrompt != null)
-            {
-                dialoguePrompt.gameObject.SetActive(false);
-
-            }
-        }
-    }
 }
