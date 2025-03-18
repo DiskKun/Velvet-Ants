@@ -46,7 +46,7 @@ Scene Number	Character Number	Dialogue ID	dialogue_type	Character	Content	Go to 
 2	7	51	option	Detective	What did you say?	44			
 2	0	200	text	character 0	I don't know what that is	0			
 2	0	54	evidence answer	character 0	"yes, I recognize that"				
-2	0	101	text	 Curian Dagger	A bloody ornate dagger crafted following curian design patterns. It’s design seems too beautiful and delicate to be carried by a common thug.				
+2	0	101	text	 Curian Dagger	A bloody ornate dagger crafted following curian design patterns. It's design seems too beautiful and delicate to be carried by a common thug.				
 2	0	102	text	Torn Fabric	"A torn piece of red fabric, looks like it belonged to a piece of clothing"				
 2	0	103	text	Mostly Empty Flask	A mostly empty flask that contains the last drops of an unknown blue liquid.				
 2	0	104	text	Comb	A beautifully crafted Ivory comb adorned with jewels. Looks like it is worth a fortune. 				
