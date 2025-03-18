@@ -211,7 +211,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogueManager: {fileID: 1716960567}
-  descriptionID: 0
+  descriptionID: 103
   animationCurve:
     serializedVersion: 2
     m_Curve:
@@ -2967,7 +2967,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogueManager: {fileID: 1716960567}
-  descriptionID: 0
+  descriptionID: 101
   animationCurve:
     serializedVersion: 2
     m_Curve:
@@ -5709,7 +5709,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogueManager: {fileID: 1716960567}
-  descriptionID: 0
+  descriptionID: 102
   animationCurve:
     serializedVersion: 2
     m_Curve:
