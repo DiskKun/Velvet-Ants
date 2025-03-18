@@ -14,6 +14,8 @@ public class Clue : MonoBehaviour, IPointerMoveHandler, IPointerClickHandler, IP
     float clickSize = 1.125f;
     float moveSize = 1.5f;
     float animationSpeed = 5;
+    public DialogueManager dialogueManager;
+    public int descriptionID;
     public AnimationCurve animationCurve;
     
     float timeAlongCurve;
@@ -35,9 +37,9 @@ public class Clue : MonoBehaviour, IPointerMoveHandler, IPointerClickHandler, IP
     {
         rt = GetComponent<RectTransform>();
         normalScale = rt.localScale;
-        hoverScale = Vector3.one * hoverSize;
-        clickScale = Vector3.one * clickSize;
-        moveScale = Vector3.one * moveSize;
+        hoverScale = normalScale * hoverSize;
+        clickScale = normalScale * clickSize;
+        moveScale = normalScale * moveSize;
     }
 
     // Update is called once per frame
@@ -95,6 +97,7 @@ public class Clue : MonoBehaviour, IPointerMoveHandler, IPointerClickHandler, IP
         if (!mouseMove)
         {
             Debug.Log("Click functionality executed here");
+            dialogueManager.CommenceDialogue(descriptionID);
         }
     }
 
