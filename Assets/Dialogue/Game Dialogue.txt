@@ -44,14 +44,14 @@ Scene Number	Character Number	Dialogue ID	dialogue_type	Character	Content	Go to 
 2	7	49	option	Detective	"Oh how convinient, the last one to see the victim, just so happens to have no memories of the night."	42			
 2	7	50	option	Detective	"Well then, what was your relationship with the girl, did you know her?*Is there anything you remember prior to the memory lapse?"	43	45		
 2	7	51	option	Detective	What did you say?	44			
-2	0	53	evidence answer	character 0	I don't know what that is				
+2	0	200	text	character 0	I don't know what that is	0			
 2	0	54	evidence answer	character 0	"yes, I recognize that"				
-2	0	101	evidence description	 Curian Dagger	A bloody ornate dagger crafted following curian design patterns. It’s design seems too beautiful and delicate to be carried by a common thug.				
-2	0	102	evidence description	Torn Fabric	"A torn piece of red fabric, looks like it belonged to a piece of clothing"				
-2	0	103	evidence description	Mostly Empty Flask	A mostly empty flask that contains the last drops of an unknown blue liquid.				
-2	0	104	evidence description	Comb	A beautifully crafted Ivory comb adorned with jewels. Looks like it is worth a fortune. 				
-2	0	201	evidence answer	Antoine Prince	"Oh yes, I know what that is. That is my dagger, I carry it with me at all times. I was quite startled since when I woke up I no longer had it on my person. You said it was bloody? Well i can assure you I have no recollection of using it on anyone!"				
-2	0	202	evidence answer	Filan Diplomat	"Hmm, it seems to be a piece of Valarian fabric. Based on the familiar patterns I would say that it comes from a dress, it is certainly similar to my own."				
-2	0	203	evidence answer	Bavro King	"Although I’m not familiar with the flask or the liquid within it, I would guess it is a potion. I have seen concoctions of a similar color before. "				
-2	0	204	evidence answer	Filan Diplomat	"Yes, I know what that is, that is the Princess’ comb, it was a gift from her mother that she received on her 16th birthday."				
-2	0	205	evidence answer	Bavro King	"Yes, I know what that is, its my daugther, Alexandria's,  comb, it was a gift from her mother that she received on her 16th birthday."				
+2	0	101	text	 Curian Dagger	A bloody ornate dagger crafted following curian design patterns. It’s design seems too beautiful and delicate to be carried by a common thug.				
+2	0	102	text	Torn Fabric	"A torn piece of red fabric, looks like it belonged to a piece of clothing"				
+2	0	103	text	Mostly Empty Flask	A mostly empty flask that contains the last drops of an unknown blue liquid.				
+2	0	104	text	Comb	A beautifully crafted Ivory comb adorned with jewels. Looks like it is worth a fortune. 				
+2	0	201	text	Antoine Prince	"Oh yes, I know what that is. That is my dagger, I carry it with me at all times. I was quite startled since when I woke up I no longer had it on my person. You said it was bloody? Well i can assure you I have no recollection of using it on anyone!"	0			
+2	0	202	text	Filan Diplomat	"Hmm, it seems to be a piece of Valarian fabric. Based on the familiar patterns I would say that it comes from a dress, it is certainly similar to my own."	0			
+2	0	203	text	Bavro King	"Although I’m not familiar with the flask or the liquid within it, I would guess it is a potion. I have seen concoctions of a similar color before. "	0			
+2	0	204	text	Filan Diplomat	"Yes, I know what that is, that is the Princess’ comb, it was a gift from her mother that she received on her 16th birthday."	0			
+2	0	205	text	Bavro King	"Yes, I know what that is, its my daugther, Alexandria's,  comb, it was a gift from her mother that she received on her 16th birthday."	0			
