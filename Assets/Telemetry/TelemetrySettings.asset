@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   userName: Velvet Ants
   secret: template adaptable
-  _version: test-v0
+  _version: playtest-v1
   _serverURL: https://telemetry-js-792bae8f0c9a.herokuapp.com/
   serverCommunication: 2
   debugLogging: 0
