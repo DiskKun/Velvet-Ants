@@ -50,7 +50,7 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetMouseButtonUp(0) && canMove)
         {
             destination = new Vector2(Camera.main.ScreenToWorldPoint(Input.mousePosition).x, transform.position.y); //sets the player's destination to whereever mouse clicks
-
+            TelemetryLogger.Log(this, "Move", destination);
         }
 
         if (movement.x < 0 && canMove)

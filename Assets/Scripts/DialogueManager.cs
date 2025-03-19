@@ -75,6 +75,7 @@ public class DialogueManager : MonoBehaviour
     {
         //dialogueBox.SetActive(true);
         currentDialogue = index;
+        TelemetryLogger.Log(this, "Dialogue Commenced", index);
         PrintDialogue(currentDialogue);
         
     }
@@ -96,8 +97,8 @@ public class DialogueManager : MonoBehaviour
     public void PrintDialogue(int dialogueID)
     {
         inputManager.ChangeGameMode("dialogue");
-        if (currentDialogue == 0) { inputManager.ChangeGameMode("move"); cameraZoomScript.ZoomOut(); return; }
-
+        if (currentDialogue == 0) { inputManager.ChangeGameMode("move"); cameraZoomScript.ZoomOut(); TelemetryLogger.Log(this, "Dialogue Closed"); return; }
+        TelemetryLogger.Log(this, "Dialogue", currentDialogue);
 
 
         string[] currDialogueRow = GetDialogueRow(currentDialogue);
