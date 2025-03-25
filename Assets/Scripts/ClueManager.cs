@@ -7,6 +7,7 @@ public class ClueManager : MonoBehaviour
 {
     public GameObject cluePanel;
     public GameObject clues;
+    public GameObject alert;
 
     Image[] clueTransforms;
 
@@ -35,6 +36,10 @@ public class ClueManager : MonoBehaviour
             if (g.name == name)
             {
                 g.SetActive(active);
+                if (active)
+                {
+                    alert.SetActive(true);
+                }
             }
         }
     }
