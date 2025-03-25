@@ -5023,6 +5023,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 953fde20809e341799418d54522d1d76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerMovement: {fileID: 1407362915}
   dialogue: {fileID: 1379772948}
   clues: {fileID: 407206492}
   evidenceButton: {fileID: 62931096}

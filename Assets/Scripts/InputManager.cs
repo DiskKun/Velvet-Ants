@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class InputManager : MonoBehaviour
 {
-    //public PlayerMovement playerMovement;
+    public PlayerMovement playerMovement;
     public GameObject dialogue;
     //public GameObject dialoguePrompt;
     public GameObject clues;
@@ -28,21 +28,22 @@ public class InputManager : MonoBehaviour
         // "clues" - clue manager
         if (mode == "move")
         {
-            PlayerMovement.AllowMovement(true);
+            StartCoroutine(PlayerMovement.AllowMovement(true));
             dialogue.SetActive(false);
             clues.SetActive(false);
             evidenceButton.SetActive(true);
         }
         else if (mode == "dialogue")
         {
-            PlayerMovement.AllowMovement(false);
+            StartCoroutine(PlayerMovement.AllowMovement(false));
             dialogue.SetActive(true);
             clues.SetActive(false);
             evidenceButton.SetActive(false);
         }
         else if (mode == "clues")
         {
-            PlayerMovement.AllowMovement(false);
+            StartCoroutine(PlayerMovement.AllowMovement(false));
+            playerMovement.StopMoving();
             dialogue.SetActive(false);
             clues.SetActive(true);
             evidenceButton.SetActive(false);

@@ -37,14 +37,11 @@ public class PlayerMovement : MonoBehaviour
         playerRB.velocity = movement.normalized * speed; //set player's velocity to the movement vector
     }
 
-    static public void AllowMovement(bool t)
-    {
-        canMove = t;
-    }
 
     void Update()
     {
-        Debug.Log(destination);
+        //Debug.Log(destination);
+        Debug.Log(canMove);
 
         //GIL's WIP
         if (Input.GetMouseButtonUp(0) && canMove)
@@ -74,6 +71,16 @@ public class PlayerMovement : MonoBehaviour
 
     }
 
+    public static IEnumerator AllowMovement(bool t)
+    {
+        if (t == true)
+        {
+            yield return new WaitForEndOfFrame();
+        }
+        canMove = t;
+        Debug.Log("Change");
+    }
+
     public void DialoguePositioning(Transform target)
     {
         //GetComponentInChildren<SpriteRenderer>().sortingOrder = 100;
@@ -88,6 +95,11 @@ public class PlayerMovement : MonoBehaviour
             facingRight = false;
         }
 
+    }
+
+    public void StopMoving()
+    {
+        destination = new Vector2(transform.position.x, transform.position.y);
     }
 
 }
