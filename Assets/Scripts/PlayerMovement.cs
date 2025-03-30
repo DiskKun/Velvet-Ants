@@ -2,16 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEditor.Experimental.GraphView;
+using UnityEditor.PackageManager.Requests;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class PlayerMovement : MonoBehaviour
 {
     //variables for player movement
-    Rigidbody2D playerRB;
-    private Vector2 startPos;
-    public Vector2 destination;
-    private Vector2 movement;
+    public Vector3 startPos;
+    public Vector3 destination;
+    private Vector3 movement;
+    private Vector3 toDestination;
     public float speed = 3;
     bool facingRight;
 
@@ -21,40 +22,35 @@ public class PlayerMovement : MonoBehaviour
 
     public AnimationCurve lerpCurve;
     private float lerpTimer;
-    public float movementDuration;
+    public float interpolation;
+
 
     void Start()
     {
-        playerRB = GetComponent<Rigidbody2D>();
         destination = transform.position;
         startPos = transform.position;
+        toDestination = Vector2.right;
     }
 
     private void FixedUpdate()
     {
-        //movement = destination - (Vector2)transform.position; //gets the vector from the current position to the destination clicked by mouse
-
-
-        //if (movement.magnitude < 0.1) //if within range of the destination, stop moving
-        //{
-        //    movement = Vector2.zero;
-        //}
-        //playerRB.velocity = movement.normalized * speed; //set player's velocity to the movement vector
-
         lerpTimer += Time.deltaTime;
-        float interpolation = lerpCurve.Evaluate(lerpTimer/movementDuration);
+        interpolation = lerpCurve.Evaluate(lerpTimer / toDestination.magnitude * speed);
         transform.position = Vector3.Lerp(startPos, destination, interpolation);
+
     }
 
 
     void Update()
     {
-        startPos = transform.position;
-
+        
         if (Input.GetMouseButtonUp(0) && canMove)
         {
-            destination = new Vector2(Camera.main.ScreenToWorldPoint(Input.mousePosition).x, transform.position.y); //sets the player's destination to whereever mouse clicks
+            destination = new Vector3(Camera.main.ScreenToWorldPoint(Input.mousePosition).x, transform.position.y); //sets the player's destination to whereever mouse clicks
             lerpTimer = 0;
+            startPos = transform.position;
+            toDestination = destination - startPos;
+            
         }
 
         if (movement.x < 0 && canMove)
@@ -94,11 +90,11 @@ public class PlayerMovement : MonoBehaviour
 
         if (target.parent.transform.localScale == new Vector3(1, 1, 1))
         {
-            destination = new Vector2(target.position.x + playerPositionOffset, transform.position.y);
+            destination = new Vector3(target.position.x + playerPositionOffset, transform.position.y);
             facingRight = true;
         } else
         {
-            destination = new Vector2(target.position.x - playerPositionOffset, transform.position.y);
+            destination = new Vector3(target.position.x - playerPositionOffset, transform.position.y);
             facingRight = false;
         }
 
@@ -106,7 +102,7 @@ public class PlayerMovement : MonoBehaviour
 
     public void StopMoving()
     {
-        destination = new Vector2(transform.position.x, transform.position.y);
+        destination = new Vector3(transform.position.x, transform.position.y);
     }
 
 }

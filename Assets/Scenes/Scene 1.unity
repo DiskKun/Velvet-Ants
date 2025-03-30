@@ -4738,8 +4738,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41fad3319eb4b0841b22ecf27526a3cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  destination: {x: 0, y: 0}
-  speed: 8
+  startPos: {x: 0, y: 0, z: 0}
+  destination: {x: 0, y: 0, z: 0}
+  speed: 10
   playerPositionOffset: 3
   lerpCurve:
     serializedVersion: 2
@@ -4765,7 +4766,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  movementDuration: 4
+  interpolation: 0
 --- !u!4 &1407362916
 Transform:
   m_ObjectHideFlags: 0
