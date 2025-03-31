@@ -87,6 +87,8 @@ public class PlayerMovement : MonoBehaviour
     public void DialoguePositioning(Transform target)
     {
         //GetComponentInChildren<SpriteRenderer>().sortingOrder = 100;
+        lerpTimer = 0;
+        startPos = transform.position;
 
         if (target.parent.transform.localScale == new Vector3(1, 1, 1))
         {
