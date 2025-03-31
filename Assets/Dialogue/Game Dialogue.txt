@@ -12,38 +12,51 @@ Scene Number	Character Number	Dialogue ID	dialogue_type	Character	Content	Go to 
 1	3	11	text	character 3	I gotta get back to work. Good luck!	0			
 1	3	12	option	Detective	Who are you?*What do you know of the murder?*Where were you during the murder?	8	9	10	
 2	4	15	text	Filan Diplomat	"Finally! Its good to see you Detective, my name is Filan the Valarian diplomat stationed here in the Dynasty, and the one who called for your services."	22			
-2	4	16	text	Filan Diplomat	"Don't underestimate the Valarian intelligence network mr Detective. We've heard about your exploits in the surrounding regions. About your ""magical"" deductive abilities, and about your astounding success rate."	23			
-2	4	17	text	Filan Diplomat	"Well of course! Who wouldn't want a detective that has solved every case he has taken, to solve the murder of our Princess."	21			
-2	4	18	text	Filan Diplomat	"I was in the banquet hall, alongside most of the guests. If you are interested in which part of the banquet hall exactly, I was sat in the eastern side where most of the Valarains also sat."	21			
-2	4	19	text	Filan Diplomat	"Not much I'm afraid, it was all quite sudden. All the candles were blown out, and by the time light was restored, the princess's corpse was splayed out in the center of the hall"	21			
-2	4	20	text	Filan Diplomat	"The spellcasters amongst us were quickly held suspect, afterall only magic would be capable of blowing out so many candles at once, and quickly restoring them. They are all being held in the library, and have not been allowed to leave since the incident. And of course the Curians, they have plenty of reason to want one of us dead."	21			
+2	4	16	text	Filan Diplomat	Don't underestimate the Valarian intelligence network mr Detective. We've heard about your exploits in the surrounding regions. 	1601			
+2	4	1601	text	Filan Diplomat	"About your ""magical"" deductive abilities, and about your astounding success rate."	23			
+2	4	17	text	Filan Diplomat	"Well of course! Who wouldn't want a detective that has solved every case he has taken, to solve the murder of our Princess."	25			
+2	4	18	text	Filan Diplomat	"I was in the banquet hall, alongside most of the guests. If you are interested in which part of the banquet hall exactly,"	1801			
+2	4	1801	text	Filan Diplomat	 I was sat in the eastern side where most of the Valarains also sat.	25			
+2	4	19	text	Filan Diplomat	"Not much I'm afraid, it was all quite sudden. All the candles were blown out, and by the time light was restored, "	1901			
+2	4	1901	text	Filan Diplomat	 the princess's corpse was splayed out in the center of the hall.	25			
+2	4	20	text	Filan Diplomat	"The spellcasters amongst us were quickly held suspect, afterall only magic would be capable of blowing out so many candles at once, and quickly restoring them. "	2001			
+2	4	2001	text	Filan Diplomat	"They are all being held in the library, and have not been allowed to leave since the incident. And of course the Curians, they have plenty of reason to want one of us dead."	25			
 2	4	21	text	Filan Diplomat	Good luck Detective! You will need it.	0			
 2	4	22	option	Detective	How did you find out about me?*Where were you during the murder?*What do you know of the murder?*Are there any suspects?	16	18	19	20
 2	4	23	option	Detective	And that was enough to hire me for such a high profile case?	17			
+2	4	25	option	Detective	Continue Conversation*End Conversation	22	21		
 2	5	27	text	Bavro King	Detective.	34			
 2	5	28	text	Bavro King	"My name is Bavro, I am the father of the deceased, and current ruler of Valaria"	35			
-2	5	29	text	Bavro King	"In this hall, as was everyone else. Though my daughter had been missing from the hall for some time before the incident."	33			
-2	5	30	text	Bavro King	"I'm King, Detective. I'm surrounded by enemies, as far as I'm concerned everyone present here is a suspect, even my closest aides. Everyone besides you I'd say."	37			
-2	5	31	text	Bavro King	"Advice? Don't rule out anyone. Curians may appear nice and well kept, but they can be as venemous as any viper. Valarians are even worse, if an opportunity for power presents itself, most don't think twice before pouncing. "	38			
-2	5	32	text	Bavro King	"I cannot give you the name of a singular person, as I mentioned before I am surrounded by enemies. But I'd be wary of our diplomat, she has made her career through knowing more than those around her. I'd bet our entire treasury she knows more than she is letting on."	33			
+2	5	29	text	Bavro King	"In this hall, as was everyone else. Though my daughter had been missing from the hall for some time before the incident."	350			
+2	5	30	text	Bavro King	"I'm King, Detective. I'm surrounded by enemies, as far as I'm concerned everyone present here is a suspect, even my closest aides."	3001			
+2	5	3001	text	Bavro King	Everyone besides you I'd say.	37			
+2	5	31	text	Bavro King	"Advice? Don't rule out anyone. Curians may appear nice and well kept, but they can be as venemous as any viper. "	3101			
+2	5	3101	text	Bavro King	"Valarians are even worse, if an opportunity for power presents itself, most don't think twice before pouncing."	38			
+2	5	32	text	Bavro King	"I cannot give you the name of a singular person, as I mentioned before I am surrounded by enemies. "	3201			
+		3201	text	Bavro King	"But I'd be wary of our diplomat, she has made her career through knowing more than those around her. I'd bet our entire treasury she knows more than she is letting on."	350			
 2	5	33	text	Bavro King	Godspeed Detective.	0			
 2	5	34	option	Detective	You are?	28			
 2	5	35	option	Detective	Where were you during the murder?*Do you believe there to be any suspects?	29	30		
 2	5	37	option	Detective	"Do you have any advice for this investigation, any immediate leads to follow?"	31			
 2	5	38	option	Detective	Any individuals in particular then?	32			
+		350	option	Detective	Continue Conversation*End Conversation	35	33		
 2	6	39	description	Antoine Prince	"The individual before you does not notice your approach. While he sits on the floor, his face is hidden by his arms. You can hear a faint sobbing."	47			
 2	6	40	text	Antoine Prince	"Ahh! Sorry, you startled me... Oh, you must be the detective. My name is Antoine, I am the first prince of the Curian Dynasty."	48			
-2	6	41	text	Antoine Prince	I guess you could say I feel guilty. I was the last one to see Princess Alexandria before she passed. I should be helping but I can't seem to remember I single thing of what took place.	49			
-2	6	42	text	Antoine Prince	"I speak the truth. I have no recollection of the events of the banquet. I remember waking up that morning, prepping for the event and nothing else, my earliest memory after that is being woken up by a guard who was looking for me, after the murder had already taken place."	50			
-2	7	43	text	Antoine Prince	"Alexandria? Yes, we had met a couple of times. She was lovely, never treated me like an enemy even though our nations are at war. We dined, talked and laughed together in many occasions, always treating me like a great friend. Even if I wished we were more..."	51			
-2	7	44	text	Antoine Prince	"UHH, NOTHING!!"	46			
-2	7	45	text	Antoine Prince	"Nothing in particular. From the little I remember, all the prepping was going smoothly. I remember talking to my parents, my uncle and Filan the diplomat. After that it is all a blur. "	46			
+2	6	41	text	Antoine Prince	I guess you could say I feel guilty. I was the last one to see Princess Alexandria before she passed.	4101			
+		4101	text	Antoine Prince	 I should be helping but I can't seem to remember I single thing of what took place.	49			
+2	6	42	text	Antoine Prince	"I speak the truth. I have no recollection of the events of the banquet. I remember waking up that morning, prepping for the event and nothing else, "	4201			
+		4201	text	Antoine Prince	"my earliest memory after that is being woken up by a guard who was looking for me, after the murder had already taken place."	50			
+2	7	43	text	Antoine Prince	"Alexandria? Yes, we had met a couple of times. She was lovely, never treated me like an enemy even though our nations are at war. "	4301			
+		4301	text	Antoine Prince	"We dined, talked and laughed together in many occasions, always treating me like a great friend. Even if I wished we were more…"	51			
+2	7	44	text	Antoine Prince	"UHH, NOTHING!!"	550			
+2	7	45	text	Antoine Prince	"Nothing in particular. From the little I remember, all the prepping was going smoothly. I remember talking to my parents, my uncle and Filan the diplomat. After that it is all a blur. "	550			
 2	7	46	text	Antoine Prince	Please Detective. Please let me know about whatever you find. The guilt is killing me...	0			
 2	7	47	option	Detective	Hey kid you there?	40			
 2	7	48	option	Detective	And you are crying because...?	41			
 2	7	49	option	Detective	"Oh how convinient, the last one to see the victim, just so happens to have no memories of the night."	42			
 2	7	50	option	Detective	"Well then, what was your relationship with the girl, did you know her?*Is there anything you remember prior to the memory lapse?"	43	45		
 2	7	51	option	Detective	What did you say?	44			
+		550	option	Detective	Continue Conversation*End Conversation	50	46		
 2	0	200	text	character 0	I don't know what that is	0			
 2	0	54	evidence answer	character 0	"yes, I recognize that"				
 2	0	101	text	 Curian Dagger	A bloody ornate dagger crafted following curian design patterns. It's design seems too beautiful and delicate to be carried by a common thug.				
