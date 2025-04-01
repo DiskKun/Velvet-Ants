@@ -29,6 +29,8 @@ public class Clue : MonoBehaviour, IPointerMoveHandler, IPointerClickHandler, IP
     Vector3 mouseMovePoint;
 
     string mode = "normal";
+
+    GameObject alert;
     
     
 
@@ -40,6 +42,7 @@ public class Clue : MonoBehaviour, IPointerMoveHandler, IPointerClickHandler, IP
         hoverScale = normalScale * hoverSize;
         clickScale = normalScale * clickSize;
         moveScale = normalScale * moveSize;
+        alert = transform.GetChild(0).gameObject;
     }
 
     // Update is called once per frame
@@ -97,6 +100,7 @@ public class Clue : MonoBehaviour, IPointerMoveHandler, IPointerClickHandler, IP
         if (!mouseMove)
         {
             Debug.Log("Click functionality executed here");
+            alert.SetActive(false);
             dialogueManager.CommenceDialogue(descriptionID);
         }
     }

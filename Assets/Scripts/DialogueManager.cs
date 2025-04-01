@@ -117,16 +117,24 @@ public class DialogueManager : MonoBehaviour
             {
                 b.onClick.RemoveAllListeners();
             }
+            foreach (GameObject g in optionBoxes)
+            {
+                g.SetActive(false);
+            }
 
+            optionBoxes[0].SetActive(true);
             optionTexts[0].text = options[0];
             optionButtons[0].onClick.AddListener(delegate { ContinueDialogue(6); });
             if (options.Length == 1) { return; }
+            optionBoxes[1].SetActive(true);
             optionTexts[1].text = options[1];
             optionButtons[1].onClick.AddListener(delegate { ContinueDialogue(7); });
             if (options.Length == 2) { return; }
+            optionBoxes[2].SetActive(true);
             optionTexts[2].text = options[2];
             optionButtons[2].onClick.AddListener(delegate { ContinueDialogue(8); });
             if (options.Length == 3) { return; }
+            optionBoxes[3].SetActive(true);
             optionTexts[3].text = options[3];
             optionButtons[3].onClick.AddListener(delegate { ContinueDialogue(9); });
 

@@ -30,14 +30,17 @@ public class InputManager : MonoBehaviour
         {
             StartCoroutine(PlayerMovement.AllowMovement(true));
             dialogue.SetActive(false);
-            clues.SetActive(false);
-            evidenceButton.SetActive(true);
+            if (!clues.activeInHierarchy)
+            {
+                evidenceButton.SetActive(true);
+                clues.SetActive(false);
+            }
         }
         else if (mode == "dialogue")
         {
             StartCoroutine(PlayerMovement.AllowMovement(false));
             dialogue.SetActive(true);
-            clues.SetActive(false);
+            //clues.SetActive(false);
             evidenceButton.SetActive(false);
         }
         else if (mode == "clues")
