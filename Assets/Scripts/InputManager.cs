@@ -10,6 +10,8 @@ public class InputManager : MonoBehaviour
     public GameObject clues;
     public GameObject evidenceButton;
 
+    public string currentGameMode;
+
     void Start()
     {
         ChangeGameMode("move");
@@ -28,6 +30,7 @@ public class InputManager : MonoBehaviour
         // "clues" - clue manager
         if (mode == "move")
         {
+            currentGameMode = mode;
             StartCoroutine(PlayerMovement.AllowMovement(true));
             dialogue.SetActive(false);
             if (!clues.activeInHierarchy)
@@ -38,6 +41,7 @@ public class InputManager : MonoBehaviour
         }
         else if (mode == "dialogue")
         {
+            currentGameMode = mode;
             StartCoroutine(PlayerMovement.AllowMovement(false));
             dialogue.SetActive(true);
             //clues.SetActive(false);
@@ -45,6 +49,7 @@ public class InputManager : MonoBehaviour
         }
         else if (mode == "clues")
         {
+            currentGameMode = mode;
             StartCoroutine(PlayerMovement.AllowMovement(false));
             playerMovement.StopMoving();
             dialogue.SetActive(false);

@@ -11,7 +11,7 @@ public class PlayerMovement : MonoBehaviour
     //variables for player movement
     public Vector3 startPos;
     public Vector3 destination;
-    private Vector3 movement;
+    private Vector3 totalDistance;
     private Vector3 toDestination;
     public float speed = 3;
     bool facingRight;
@@ -24,18 +24,23 @@ public class PlayerMovement : MonoBehaviour
     private float lerpTimer;
     public float interpolation;
 
+    //changing order in layer when in dialogue
+    public InputManager inputManager;
+    private SpriteRenderer sprite;
 
     void Start()
     {
         destination = transform.position;
         startPos = transform.position;
-        toDestination = Vector2.right;
+        toDestination = Vector3.right;
+        totalDistance = Vector3.right;
+        sprite = GetComponentInChildren<SpriteRenderer>();
     }
 
     private void FixedUpdate()
     {
         lerpTimer += Time.deltaTime;
-        interpolation = lerpCurve.Evaluate(lerpTimer / toDestination.magnitude * speed);
+        interpolation = lerpCurve.Evaluate(lerpTimer / totalDistance.magnitude * speed);
         transform.position = Vector3.Lerp(startPos, destination, interpolation);
 
     }
@@ -49,16 +54,17 @@ public class PlayerMovement : MonoBehaviour
             destination = new Vector3(Camera.main.ScreenToWorldPoint(Input.mousePosition).x, transform.position.y); //sets the player's destination to whereever mouse clicks
             lerpTimer = 0;
             startPos = transform.position;
-            toDestination = destination - startPos;
-            
+            totalDistance = destination - startPos;
         }
+        toDestination = destination - transform.position;
 
-        if (movement.x < 0 && canMove)
+
+        if (toDestination.x < 0 && canMove)
         {
             facingRight = true;
             
         }
-        else if (movement.x > 0 && canMove)
+        else if (toDestination.x > 0 && canMove)
         {
             facingRight = false;
 
@@ -70,6 +76,14 @@ public class PlayerMovement : MonoBehaviour
         } else
         {
             gameObject.transform.localScale = new Vector3(-1, 1, 1); //character faces left
+        }
+
+        if (inputManager.currentGameMode == "dialogue")
+        {
+            sprite.sortingOrder = 21; //above pillars
+        } else
+        {
+            sprite.sortingOrder = 5; //default sorting order
         }
 
     }
@@ -86,7 +100,6 @@ public class PlayerMovement : MonoBehaviour
 
     public void DialoguePositioning(Transform target)
     {
-        //GetComponentInChildren<SpriteRenderer>().sortingOrder = 100;
         lerpTimer = 0;
         startPos = transform.position;
 
@@ -105,6 +118,18 @@ public class PlayerMovement : MonoBehaviour
     public void StopMoving()
     {
         destination = new Vector3(transform.position.x, transform.position.y);
+    }
+
+    public void MovementPause()
+    {
+        StartCoroutine("PauseMovementCoroutine");
+    }
+
+    public IEnumerator PauseMovementCoroutine()
+    {
+        canMove = false;
+        yield return new WaitForEndOfFrame();
+        canMove = true;
     }
 
 }
